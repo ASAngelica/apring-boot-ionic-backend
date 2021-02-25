@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -19,7 +21,16 @@ public class Categoria implements Serializable {
 	private Integer id;
 	private String nome;
 	
+	/*
+	Para resolver e tratar problema da "Referência Cíclica ou Circular", entre dois objetos com anotação @ManyToMany, tem varias formas de resolver, implementar na mão a serialização, 
+	usar anotações para barrar a referência cíclica e outras formas. Vamos fazer de forma bem clássica no nosso systema, nas bibliotecas que estamos usando. Queremos ir no  end point /categoria/{id} 
+	e pegar a Categoria e seus produtos na classe Categoria, e para avisarmos que esta tudo bem e serializarmos os produtos, vamos colocar na lista<Produtos> 
+	a anotação @JsonManagedReference no lado que queremos que venha os objetos associados no outro lado, lado oposto, neste caso a classe Produto na lista<Categoria> 
+	colocaremos a anotação @JsonBackReference, ele faz o seguinte: no outro lado da associação já foram buscados os objetos, agora eu não busco mais, será omitido a lista de 
+	Categorias para cada produto.
+	*/
 	
+	@JsonManagedReference
 	@ManyToMany(mappedBy = "categorias") //O mapeamento foi feito em na classe de dominio Produto
 	private List<Produto> produtos  = new ArrayList<>();
 	
