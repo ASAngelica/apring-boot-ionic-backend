@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.lgdoiscursomc.domain.enums.TipoCliente;
 
 @Entity
@@ -28,6 +29,8 @@ public class Cliente implements Serializable {
 	private String cpfOuCnpj;
 	private Integer  tipo; //Não vamos armazenar neste atributo um dado do tipo TipoCliente e sim um número inteiro normal, entao internamente o dado vai ser armazenado como 
 	                       //nr inteiro mas externamente a classe vai expor um dado do tipo TipoCliente
+	
+	@JsonManagedReference //Proteger contra serialização Json cíclica
 	@OneToMany(mappedBy = "cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
 	
