@@ -87,12 +87,5 @@ public abstract class Pagamento implements Serializable { // declaramos a classe
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
