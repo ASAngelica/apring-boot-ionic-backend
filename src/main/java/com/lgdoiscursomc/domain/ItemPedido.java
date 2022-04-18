@@ -35,10 +35,6 @@ public class ItemPedido implements Serializable {
 	public Pedido getPedido() {
 		return id.getPedido();
 	}
-	
-	public Produto getProduto() {
-		return id.getProduto();
-	}
 
 	public ItemPedidoPK getId() {
 		return id;
@@ -70,6 +66,10 @@ public class ItemPedido implements Serializable {
 
 	public void setPreço(Double preco) {
 		this.preco = preco;
+	}
+	
+	public Produto getProduto() {
+		return id.getProduto();
 	}
 
 	@Override

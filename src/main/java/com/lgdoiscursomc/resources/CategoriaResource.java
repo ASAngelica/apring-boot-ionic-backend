@@ -1,5 +1,6 @@
 package com.lgdoiscursomc.resources;
 
+
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -75,8 +76,8 @@ public class CategoriaResource {
              @RequestParam(value = "orderBy", defaultValue ="nome")String orderBy,
              @RequestParam(value ="direction", defaultValue = "ASC")String direction){
           Page<Categoria> list = service.findPage(page, linesPerPage, orderBy, direction);
-   	      Page<CategoriaDTO> listDTO = list.map(obj -> new CategoriaDTO(obj));
-   	      return ResponseEntity.ok().body(listDTO);
+   	      Page<CategoriaDTO> listDto = list.map(obj -> new CategoriaDTO(obj));
+   	      return ResponseEntity.ok().body(listDto);
    }
    
   
