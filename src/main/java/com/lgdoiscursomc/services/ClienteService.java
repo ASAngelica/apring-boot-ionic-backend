@@ -64,5 +64,4 @@ public class ClienteService {
 		newObj.setEmail(obj.getEmail());
 		
 	}
-	
 }
