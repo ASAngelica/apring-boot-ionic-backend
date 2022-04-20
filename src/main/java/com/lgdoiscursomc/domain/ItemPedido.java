@@ -39,10 +39,14 @@ public class ItemPedido implements Serializable {
 	public Pedido getPedido() {
 		return id.getPedido();
 	}
+	
+	public void setPedido(Pedido pedido) {
+		id.setPedido(pedido);
+	}
 
 	public ItemPedidoPK getId() {
 		return id;
-	}
+	}	
 
 	public void setId(ItemPedidoPK id) {
 		this.id = id;
@@ -56,24 +60,28 @@ public class ItemPedido implements Serializable {
 		this.desconto = desconto;
 	}
 
-	public Integer getQtd() {
+	public Integer getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQtd(Integer qtd) {
+	public void setQuantidade(Integer qtd) {
 		this.quantidade = qtd;
 	}
 
-	public Double getPreço() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreço(Double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 	
 	public Produto getProduto() {
 		return id.getProduto();
+	}
+	
+	public void setProduto(Produto produto) {
+		id.setProduto(produto);
 	}
 
 	@Override
@@ -100,7 +108,4 @@ public class ItemPedido implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-
 }

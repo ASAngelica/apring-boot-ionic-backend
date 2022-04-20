@@ -10,11 +10,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore; //Pacote para serializar e desserializar nossas classes com json
+import com.fasterxml.jackson.annotation.JsonTypeInfo;// "                       "                          "
 import com.lgdoiscursomc.domain.enums.EstadoPagamento;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")//Por se tratar de classe abstrata essa notaçao é necessaria para inserir um tipo a fim do json saber quais das subclasses instanciar
 public abstract class Pagamento implements Serializable { // declaramos a classe abstrata para garantir que nao possa ser instanciados objetos do tipo Pagamento.
 	private static final long serialVersionUID = 1L;
 	
