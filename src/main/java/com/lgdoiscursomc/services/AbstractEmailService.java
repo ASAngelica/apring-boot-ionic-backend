@@ -13,7 +13,7 @@ public abstract class AbstractEmailService implements EmailService {
 	private String sender;
 	
 	@Override
-	public void sendOrderCnfirmationEmail(Pedido obj) {
+	public void sendOrderConfirmationEmail(Pedido obj) {
 		SimpleMailMessage sm = prepareSimpleMailMessageFromPedido(obj);
 		sendEmail(sm);
 	}
