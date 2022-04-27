@@ -9,11 +9,11 @@
 		<version>2.4.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	
+
 	<groupId>com.lgdois</groupId>
 	<artifactId>projetomc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<name>cursomc</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -49,7 +49,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -65,16 +65,21 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.1.5.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
 	</dependencies>
